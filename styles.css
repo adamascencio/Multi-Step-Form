@@ -83,3 +83,18 @@ form {
   display: grid;
   gap: 1.5rem;
 }
+/* Styles applied to current step */
+#current-step > div:not(.hidden) > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+#current-step > div:not(.hidden) > div:first-child > p {
+  color: var(--cool-gray);
+}
+
+#current-step > div:not(.hidden) > div:nth-child(2) {
+ height: 100%;
+ padding: 3rem 0;
+}
