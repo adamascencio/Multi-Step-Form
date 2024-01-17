@@ -1,0 +1,84 @@
+:root {
+    /* Primary Colors */
+    --marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+
+    /* Neutral Colors */
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+aside {
+  background-image: url('assets/images/bg-sidebar-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  color: var(--white);
+  padding: 2rem 0;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 2rem;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 100%;
+  gap: 1rem;
+}
+
+.label {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 1rem;
+}
+
+.label > div:first-child {
+  justify-self: end;
+  align-self: center;
+}
+
+.label-number {
+  border: 2px solid var(--white);
+  border-radius: 100%;
+  padding: 10px;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.label > div:last-child > div:first-child {
+  color: var(--cool-gray);  
+  font-size: 0.8rem;
+}
+
+.step-selected {
+  background-color: var(--white);
+  color: var(--purplish-blue);
+}
+
+.hidden {
+  display: none;
+}
+
+#label-grid {
+  display: grid;
+  gap: 1.5rem;
+}
