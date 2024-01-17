@@ -25,6 +25,7 @@ aside {
   background-image: url('assets/images/bg-sidebar-desktop.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: bottom;
   border-radius: 10px;
   color: var(--white);
   padding: 2rem 0;
