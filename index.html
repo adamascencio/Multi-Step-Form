@@ -5,36 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentor | Multi-step form</title>
-  <link rel="stylesheet" src="./styles.css" type="text/css"/>
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" type="text/css"/>
 </head>
 <body>
-  <div id="ms-form">
+  <form id="ms-form">
     <!-- Sidebar -->
-    <div id="sidebar">
+    <aside id="sidebar">
       <div id="label-grid">
         <div class="label">
           <div id="step1" class="label-number">1</div>
-          <div class="label-text">Your info</div>
+          <div>
+            <div>Step 1</div>
+            <div class="label-text">Your info</div>
+          </div>
         </div>
         <div class="label">
           <div id="step2" class="label-number">2</div>
-          <div class="label-text">Select plan</div>
+          <div>
+            <div>Step 2</div>
+            <div class="label-text">Select plan</div>
+          </div>
         </div>
         <div class="label">
           <div id="step3" class="label-number">3</div>
-          <div class="label-text">Add-ons</div>
+          <div>
+            <div>Step 3</div>
+            <div class="label-text">Add-ons</div>
+          </div>
         </div>
         <div class="label">
           <div id="step4" class="label-number">4</div>
-          <div class="label-text">Summary</div>
+          <div>
+            <div>Step 4</div>
+            <div class="label-text">Summary</div>
+          </div>
         </div>
       </div>
-    </div>
+    </aside>
     <div id="current-step">
       <div id="personal-info">
         <!-- Step 1 start -->
