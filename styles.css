@@ -44,6 +44,12 @@ form {
   gap: 1rem;
 }
 
+.info-input {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
 .label {
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -77,6 +83,11 @@ form {
 
 .hidden {
   display: none;
+}
+
+#info-input-grid {
+  display: grid;
+  gap: 1.5rem;
 }
 
 #label-grid {
