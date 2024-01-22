@@ -77,33 +77,39 @@
           <p>You have the option of monthly or yearly billing.</p>
         </div>
         <div class="container">
-          <div id="plan-cards">
-            <div class="card">
-              <img src="./assets/images/icon-arcade.svg" alt="Arcade" />
-              <div class="grid">
-                <h2>Arcade</h2>
-                <p>$9/mo</p>
+          <div class="flex">
+            <div id="plan-cards">
+              <div class="card">
+                <img src="./assets/images/icon-arcade.svg" alt="Arcade" />
+                <div class="grid">
+                  <h2>Arcade</h2>
+                  <p>$9/mo</p>
+                </div>
+              </div>
+              <div class="card">
+                <img src="./assets/images/icon-advanced.svg" alt="advanced" />
+                <div class="grid">
+                  <h2>Advanced</h2>
+                  <p>$12/mo</p>
+                </div>
+              </div>
+              <div class="card">
+                <img src="./assets/images/icon-pro.svg" alt="pro" />
+                <div class="grid">
+                  <h2>Pro</h2>
+                  <p>$15/mo</p>
+                </div>
               </div>
             </div>
-            <div class="card">
-              <img src="./assets/images/icon-advanced.svg" alt="advanced" />
-              <div class="grid">
-                <h2>Advanced</h2>
-                <p>$12/mo</p>
-              </div>
+            <div id="billing-toggle">
+              <span>Monthly</span>
+              <input type="range" id="mo-yr" name="billing-cycle" min="0" max="1">
+              <span>Yearly</span>
             </div>
-            <div class="card">
-              <img src="./assets/images/icon-pro.svg" alt="pro" />
-              <div class="grid">
-                <h2>Pro</h2>
-                <p>$15/mo</p>
-              </div>
+            <div class="links-container">
+              <a href="#">Go Back</a>
+              <button class="next-btn" type="submit" value="next">Next Step</button>
             </div>
-          </div>
-          <div id="billing-toggle">
-            <span>Monthly</span>
-            <input type="range" id="mo-yr" name="billing-cycle" min="0" max="1">
-            <span>Yearly</span>
           </div>
         </div>
       </div>

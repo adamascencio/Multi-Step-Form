@@ -21,6 +21,12 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: var(--marine-blue);
+}
+
 aside {
   background-image: url('assets/images/bg-sidebar-desktop.svg');
   background-repeat: no-repeat;
@@ -143,6 +149,12 @@ input[type='range']::-ms-thumb {
   height: 100%;
 }
 
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 .grid {
   display: grid;
   gap: 5px;
@@ -190,6 +202,12 @@ input[type='range']::-ms-thumb {
   font-size: 0.8rem;
 }
 
+.links-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .step-selected {
   background-color: var(--white);
   color: var(--purplish-blue);
@@ -207,6 +225,9 @@ input[type='range']::-ms-thumb {
   border-radius: 10px;
   width: 150px;
   height: 50px;
+}
+
+#info-input-grid > .next-btn {
   place-self: end;
   margin-top: 6rem;
 }
@@ -243,7 +264,6 @@ input[type='range']::-ms-thumb {
 #plan-cards {
   display: flex;
   gap: 1rem;
-  margin-bottom: 4rem;
 }
 
 /* Styles applied to current step */
