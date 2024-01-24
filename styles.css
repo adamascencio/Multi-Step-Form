@@ -129,6 +129,20 @@ input[type='range']::-ms-thumb {
   margin-top: 0; /* IE doesn't require a negative margin */
 }
 
+.add-on-grid {
+  display: grid;
+  grid-template-columns: 40px 3fr 1fr;
+  gap: 1rem;
+  border: 1px solid var(--marine-blue);
+  border-radius: 10px;
+  height: 80px;
+  place-items: center start;
+}
+
+.add-on-grid > input[type='checkbox'] {
+  justify-self: end;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -142,6 +156,12 @@ input[type='range']::-ms-thumb {
 .card:hover {
   border-color: var(--purplish-blue);
   background-color: var(--light-blue);
+}
+
+.cards-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .container {
