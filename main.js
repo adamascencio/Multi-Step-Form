@@ -15,6 +15,7 @@ const addOnsEl = document.getElementById('add-ons');
 const confirmationEl = document.getElementById('confirmation');
 const allNextButtons = document.getElementsByClassName('next-btn');
 const allBackLinks = document.getElementsByClassName('back');
+const addOnCards = document.getElementsByClassName('add-on-grid');
 
 /*----- event listeners -----*/
 // add event listener to all next buttons
@@ -24,6 +25,10 @@ for (let i = 0; i < allNextButtons.length; i++) {
 
 for (let i = 0; i < allBackLinks.length; i++) {
   allBackLinks[i].addEventListener('click', handleBackClick);
+}
+
+for (let i = 0; i < addOnCards.length; i++) {
+  addOnCards[i].addEventListener('change', handleAddOnClick);
 }
 
 /*----- functions -----*/
@@ -49,4 +54,16 @@ function handleBackClick(evt) {
   stepSidebarArr[currentStep].classList.add('step-selected');
   stepContentArr[currentStep].classList.remove('hidden');
   console.log('clicked')
+}
+
+function handleAddOnClick(evt) {
+  console.log(evt)
+  const addOnSelected = evt.target.name;
+  const addOnEl = document.getElementById(addOnSelected);
+
+  if (evt.target.checked) {
+    addOnEl.classList.add('add-on-checked');
+  } else {
+    addOnEl.classList.remove('add-on-checked');
+  }
 }

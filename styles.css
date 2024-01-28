@@ -139,8 +139,15 @@ input[type='range']::-ms-thumb {
   place-items: center start;
 }
 
+.add-on-checked {
+  background-color: var(--light-blue);
+  border-color: var(--purplish-blue);
+}
+
 .add-on-grid > input[type='checkbox'] {
   justify-self: end;
+  width: 20px;
+  height: 20px;
 }
 
 .card {
