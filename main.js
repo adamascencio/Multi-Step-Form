@@ -57,7 +57,6 @@ function handleBackClick(evt) {
 }
 
 function handleAddOnClick(evt) {
-  console.log(evt)
   const addOnSelected = evt.target.name;
   const addOnEl = document.getElementById(addOnSelected);
 
