@@ -73,7 +73,6 @@ function handleBackClick(evt) {
   currentStep--;
   stepSidebarArr[currentStep].classList.add('step-selected');
   stepContentArr[currentStep].classList.remove('hidden');
-  console.log('clicked')
 }
 
 function handleAddOnClick(evt) {
