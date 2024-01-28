@@ -62,7 +62,6 @@ function handleNextClick(evt) {
   currentStep++;
   stepSidebarArr[currentStep].classList.add('step-selected');
   stepContentArr[currentStep].classList.remove('hidden');
-  console.log('clicked')
 }
 
 function handleBackClick(evt) {
@@ -90,7 +89,7 @@ function handleAddOnClick(evt) {
 
 function handleBillingChange(evt) {
   billingCycle = evt.target.value;
-  
+
   if (billingCycle === '1') {
     monthlyEl.classList.remove('cycle-selected');
     yearlyEl.classList.add('cycle-selected');
