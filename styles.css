@@ -235,10 +235,6 @@ input[type='range']::-ms-thumb {
   align-items: center;
 }
 
-.step-selected {
-  background-color: var(--white);
-  color: var(--purplish-blue);
-}
 
 .hidden {
   display: none;
@@ -252,6 +248,20 @@ input[type='range']::-ms-thumb {
   border-radius: 10px;
   width: 150px;
   height: 50px;
+}
+
+#billing-toggle > span {
+  color: var(--cool-gray);
+}
+
+#billing-toggle > .cycle-selected {
+  color: black;
+  font-weight: bold;
+}
+
+.step-selected {
+  background-color: var(--white);
+  color: var(--purplish-blue);
 }
 
 #info-input-grid > .next-btn {
@@ -274,9 +284,6 @@ input[type='range']::-ms-thumb {
   padding: 2rem;
 }
 
-#billing-toggle > span {
-  color: var(--cool-gray);
-}
 
 #info-input-grid {
   display: grid;

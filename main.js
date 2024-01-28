@@ -1,21 +1,40 @@
 /*----- constants -----*/
 const TOTAL_STEPS = 4;
+const PRICES = {
+  arcade: 9,
+  advanced: 12,
+  pro: 15,
+}
 
 /*----- app's state (variables) -----*/
 let currentStep = 0;
+let planSelected = ''; // arcade, advanced, pro
+let billingCycle = 0; // 0 = monthly, 1 = yearly
 
 /*----- cached element references -----*/
+// Sidebar elements
 const step1Sidebar = document.getElementById('step1');
 const step2Sidebar = document.getElementById('step2');
 const step3Sidebar = document.getElementById('step3');
 const step4Sidebar = document.getElementById('step4');
+// Step 1 elements
 const personalInfoEl = document.getElementById('personal-info');
+// Step 2 elements
 const selectPlanEl = document.getElementById('select-plan');
+const addOnCards = document.getElementsByClassName('add-on-grid');
+const arcadePlan = document.getElementById('arcade');
+const advancedPlan = document.getElementById('advanced');
+const proPlan = document.getElementById('pro');
+const billingSelect = document.getElementById('mo-yr')
+const monthlyEl = document.querySelector('#billing-toggle > span:first-child');
+const yearlyEl = document.querySelector('#billing-toggle > span:last-child');
+// Step 3 elements
 const addOnsEl = document.getElementById('add-ons');
+// Step 4 elements
 const confirmationEl = document.getElementById('confirmation');
+// Common elements
 const allNextButtons = document.getElementsByClassName('next-btn');
 const allBackLinks = document.getElementsByClassName('back');
-const addOnCards = document.getElementsByClassName('add-on-grid');
 
 /*----- event listeners -----*/
 // add event listener to all next buttons
@@ -30,6 +49,8 @@ for (let i = 0; i < allBackLinks.length; i++) {
 for (let i = 0; i < addOnCards.length; i++) {
   addOnCards[i].addEventListener('change', handleAddOnClick);
 }
+
+billingSelect.addEventListener('change', handleBillingChange);
 
 /*----- functions -----*/
 function handleNextClick(evt) {
@@ -64,5 +85,17 @@ function handleAddOnClick(evt) {
     addOnEl.classList.add('add-on-checked');
   } else {
     addOnEl.classList.remove('add-on-checked');
+  }
+}
+
+function handleBillingChange(evt) {
+  billingCycle = evt.target.value;
+  
+  if (billingCycle === '1') {
+    monthlyEl.classList.remove('cycle-selected');
+    yearlyEl.classList.add('cycle-selected');
+  } else {
+    monthlyEl.classList.add('cycle-selected');
+    yearlyEl.classList.remove('cycle-selected');
   }
 }
