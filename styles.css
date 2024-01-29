@@ -141,7 +141,7 @@ input[type='range']::-ms-thumb {
 
 .add-on-checked {
   background-color: var(--light-blue);
-  border-color: var(--purplish-blue);
+  border: 1px solid var(--purplish-blue) !important;
 }
 
 .add-on-grid > input[type='checkbox'] {

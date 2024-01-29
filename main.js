@@ -51,6 +51,9 @@ for (let i = 0; i < addOnCards.length; i++) {
 }
 
 billingSelect.addEventListener('change', handleBillingChange);
+arcadePlan.addEventListener('click', handlePlanClick);
+advancedPlan.addEventListener('click', handlePlanClick);
+proPlan.addEventListener('click', handlePlanClick);
 
 /*----- functions -----*/
 function handleNextClick(evt) {
@@ -96,4 +99,18 @@ function handleBillingChange(evt) {
     monthlyEl.classList.add('cycle-selected');
     yearlyEl.classList.remove('cycle-selected');
   }
+}
+
+function handlePlanClick(evt) {
+  planId = evt.target.id;
+  const planEl = document.getElementById(planId);
+  
+  if (planEl.classList.contains('add-on-checked')) {
+    planEl.classList.remove('add-on-checked');
+    planSelected = '';
+  } else {
+    planEl.classList.add('add-on-checked');
+    planSelected = evt.target.id;
+  }
+  
 }
