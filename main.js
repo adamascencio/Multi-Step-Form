@@ -104,6 +104,13 @@ function handleBillingChange(evt) {
 function handlePlanClick(evt) {
   planId = evt.target.id;
   const planEl = document.getElementById(planId);
+
+  // Remove add-on-checked class from all plans
+  [arcadePlan, advancedPlan, proPlan].forEach(plan => {
+    if (plan.classList.contains('add-on-checked')) {
+      plan.classList.remove('add-on-checked');
+    }
+  });
   
   if (planEl.classList.contains('add-on-checked')) {
     planEl.classList.remove('add-on-checked');
@@ -112,5 +119,4 @@ function handlePlanClick(evt) {
     planEl.classList.add('add-on-checked');
     planSelected = evt.target.id;
   }
-  
 }
