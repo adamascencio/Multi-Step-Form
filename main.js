@@ -1,15 +1,19 @@
 /*----- constants -----*/
 const TOTAL_STEPS = 4;
-const PRICES = {
+const PRICES_MTH = {
   arcade: 9,
   advanced: 12,
   pro: 15,
+  addOn1: 1,
+  addOn2: 2,
+  addOn3: 3,
 }
 
 /*----- app's state (variables) -----*/
 let currentStep = 0;
 let planSelected = ''; // arcade, advanced, pro
 let billingCycle = 0; // 0 = monthly, 1 = yearly
+let addOns = []; // addOn1, addOn2, addOn3
 
 /*----- cached element references -----*/
 // Sidebar elements
@@ -21,7 +25,6 @@ const step4Sidebar = document.getElementById('step4');
 const personalInfoEl = document.getElementById('personal-info');
 // Step 2 elements
 const selectPlanEl = document.getElementById('select-plan');
-const addOnCards = document.getElementsByClassName('add-on-grid');
 const arcadePlan = document.getElementById('arcade');
 const advancedPlan = document.getElementById('advanced');
 const proPlan = document.getElementById('pro');
@@ -30,6 +33,10 @@ const monthlyEl = document.querySelector('#billing-toggle > span:first-child');
 const yearlyEl = document.querySelector('#billing-toggle > span:last-child');
 // Step 3 elements
 const addOnsEl = document.getElementById('add-ons');
+const addOnCards = document.getElementsByClassName('add-on-grid');
+const addOn1Input = document.getElementById('#add-on-1');
+const addOn2Input = document.getElementById('#add-on-2');
+const addOn3Input = document.getElementById('#add-on-3');
 // Step 4 elements
 const confirmationEl = document.getElementById('confirmation');
 // Common elements
@@ -54,6 +61,9 @@ billingSelect.addEventListener('change', handleBillingChange);
 arcadePlan.addEventListener('click', handlePlanClick);
 advancedPlan.addEventListener('click', handlePlanClick);
 proPlan.addEventListener('click', handlePlanClick);
+addOn1Input?.addEventListener('change', handleAddOnClick);
+addOn2Input?.addEventListener('change', handleAddOnClick);
+addOn3Input?.addEventListener('change', handleAddOnClick);
 
 /*----- functions -----*/
 function handleNextClick(evt) {
@@ -118,5 +128,18 @@ function handlePlanClick(evt) {
   } else {
     planEl.classList.add('add-on-checked');
     planSelected = evt.target.id;
+  }
+}
+
+function handleAddOnClick(evt) {
+  const addOnSelected = evt.target.name;
+  const addOnEl = document.getElementById(addOnSelected);
+
+  if (evt.target.checked) {
+    addOnEl.classList.add('add-on-checked');
+    addOns.push(addOnSelected);
+  } else {
+    addOnEl.classList.remove('add-on-checked');
+    addOns.splice(addOns.indexOf(addOnSelected), 1);
   }
 }
