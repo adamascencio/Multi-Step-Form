@@ -162,8 +162,42 @@
           <h1>Finishing Up</h1>
           <p>Double-check everything looks OK before confirming.</p>
         </div>
-        <div id="user-selected-options"></div>
-        <div id="total-cost"></div>
+        <div class="container">
+          <div class="flex">
+            <div>
+              <div id="summary">
+                <div id="user-plan" class="flex-sp-btw">
+                  <div>
+                    <span>Some plan(monthly)</span>
+                    <a href="#">Change</a>
+                  </div>
+                  <span>$9/mo</span>
+                </div>
+                <hr>
+                <div id="add-ons-listing">
+                  <ul>
+                    <li class="flex-sp-btw">
+                      <span>option 1</span>
+                      <span>$10/mo</span>
+                    </li>
+                    <li class="flex-sp-btw">
+                      <span>option 2</span>
+                      <span>$10/mo</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="total-cost" class="flex-sp-btw">
+                <span>Total (per month)</span>
+                <span class="total">$9</p>
+              </div>
+            </div>
+            <div class="links-container">
+              <a href="#" class="back">Go Back</a>
+              <button class="next-btn" type="submit" value="next">Confirm</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </form>
