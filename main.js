@@ -39,6 +39,8 @@ const addOn2Input = document.getElementById('#add-on-2');
 const addOn3Input = document.getElementById('#add-on-3');
 // Step 4 elements
 const confirmationEl = document.getElementById('confirmation');
+const billingCycleSpan = document.getElementById('user-billing-cycle');
+const billingCycleSpan2 = document.querySelector('#total-cost > span:first-child > span');
 // Common elements
 const allNextButtons = document.getElementsByClassName('next-btn');
 const allBackLinks = document.getElementsByClassName('back');
@@ -105,9 +107,13 @@ function handleBillingChange(evt) {
   if (billingCycle === '1') {
     monthlyEl.classList.remove('cycle-selected');
     yearlyEl.classList.add('cycle-selected');
+    billingCycleSpan.textContent = '(Yearly)';
+    billingCycleSpan2.textContent = 'year';
   } else {
     monthlyEl.classList.add('cycle-selected');
     yearlyEl.classList.remove('cycle-selected');
+    billingCycleSpan.textContent = '(Monthly)';
+    billingCycleSpan2.textContent = 'month';
   }
 }
 
