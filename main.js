@@ -81,6 +81,16 @@ function init() {
   }
 }
 
+function disableNextBtn() {
+  allNextButtons[currentStep].classList.add('next-btn-disabled');
+  allNextButtons[currentStep].disabled = true;
+}
+
+function enableNextBtn() {
+  allNextButtons[currentStep].classList.remove('next-btn-disabled');
+  allNextButtons[currentStep].disabled = false;
+}
+
 function validateTextInputs(evt) {
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
@@ -92,12 +102,10 @@ function validateTextInputs(evt) {
   const isValidPhone = phone.trim() !== '' && phone.length >= 10;
 
   if (isValidName && isValidEmail && isValidPhone) {
-    allNextButtons[0].classList.remove('next-btn-disabled');
-    allNextButtons[0].disabled = false;
+    enableNextBtn();
   } else {
     if (!allNextButtons[0].classList.contains('next-btn-disabled')) {
-      allNextButtons[0].classList.add('next-btn-disabled');
-      allNextButtons[0].disabled = true;
+      disableNextBtn();
     }
   }
 }
