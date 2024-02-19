@@ -49,7 +49,10 @@ const allNextButtons = document.querySelectorAll('.next-btn');
 const allBackLinks = document.getElementsByClassName('back');
 
 /*----- event listeners -----*/
-// add event listener to all next buttons
+for (input of textInputs) {
+  input.addEventListener('input', validateTextInputs);
+}
+
 for (let i = 0; i < allNextButtons.length; i++) {
   allNextButtons[i].addEventListener('click', handleNextClick);
 }
@@ -75,6 +78,27 @@ function init() {
   for (btn of allNextButtons) {
     btn.classList.add('next-btn-disabled');
     btn.disabled = true;
+  }
+}
+
+function validateTextInputs(evt) {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+
+  // Add validation for name, email, and phone number
+  const isValidName = name.trim() !== '';
+  const isValidEmail = email.trim() !== '' && email.includes('@') && email.includes('.');
+  const isValidPhone = phone.trim() !== '' && phone.length >= 10;
+
+  if (isValidName && isValidEmail && isValidPhone) {
+    allNextButtons[0].classList.remove('next-btn-disabled');
+    allNextButtons[0].disabled = false;
+  } else {
+    if (!allNextButtons[0].classList.contains('next-btn-disabled')) {
+      allNextButtons[0].classList.add('next-btn-disabled');
+      allNextButtons[0].disabled = true;
+    }
   }
 }
 
