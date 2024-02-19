@@ -23,6 +23,7 @@ const step3Sidebar = document.getElementById('step3');
 const step4Sidebar = document.getElementById('step4');
 // Step 1 elements
 const personalInfoEl = document.getElementById('personal-info');
+const textInputs = document.querySelectorAll('.info-input');
 // Step 2 elements
 const selectPlanEl = document.getElementById('select-plan');
 const arcadePlan = document.getElementById('arcade');
@@ -31,6 +32,7 @@ const proPlan = document.getElementById('pro');
 const billingSelect = document.getElementById('mo-yr')
 const monthlyEl = document.querySelector('#billing-toggle > span:first-child');
 const yearlyEl = document.querySelector('#billing-toggle > span:last-child');
+const planCards = document.getElementsByClassName('card');
 // Step 3 elements
 const addOnsEl = document.getElementById('add-ons');
 const addOnCards = document.getElementsByClassName('add-on-grid');
@@ -38,11 +40,12 @@ const addOn1Input = document.getElementById('#add-on-1');
 const addOn2Input = document.getElementById('#add-on-2');
 const addOn3Input = document.getElementById('#add-on-3');
 // Step 4 elements
+const planName = document.getElementById('plan-name');
 const confirmationEl = document.getElementById('confirmation');
 const billingCycleSpan = document.getElementById('user-billing-cycle');
 const billingCycleSpan2 = document.querySelector('#total-cost > span:first-child > span');
 // Common elements
-const allNextButtons = document.getElementsByClassName('next-btn');
+const allNextButtons = document.querySelectorAll('.next-btn');
 const allBackLinks = document.getElementsByClassName('back');
 
 /*----- event listeners -----*/
@@ -68,6 +71,13 @@ addOn2Input?.addEventListener('change', handleAddOnClick);
 addOn3Input?.addEventListener('change', handleAddOnClick);
 
 /*----- functions -----*/
+function init() {
+  for (btn of allNextButtons) {
+    btn.classList.add('next-btn-disabled');
+    btn.disabled = true;
+  }
+}
+
 function handleNextClick(evt) {
   evt.preventDefault();
   const stepSidebarArr = [step1Sidebar, step2Sidebar, step3Sidebar, step4Sidebar];
@@ -118,8 +128,9 @@ function handleBillingChange(evt) {
 }
 
 function handlePlanClick(evt) {
-  planId = evt.target.id;
+  const planId = evt.target.id;
   const planEl = document.getElementById(planId);
+  planSelected = planId;
 
   // Remove add-on-checked class from all plans
   [arcadePlan, advancedPlan, proPlan].forEach(plan => {
@@ -149,3 +160,5 @@ function handleAddOnClick(evt) {
     addOns.splice(addOns.indexOf(addOnSelected), 1);
   }
 }
+
+init();
