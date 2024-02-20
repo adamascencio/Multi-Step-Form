@@ -33,6 +33,7 @@ const billingSelect = document.getElementById('mo-yr')
 const monthlyEl = document.querySelector('#billing-toggle > span:first-child');
 const yearlyEl = document.querySelector('#billing-toggle > span:last-child');
 const planCards = document.getElementsByClassName('card');
+const planCardsDiv = document.getElementById('plan-cards');
 // Step 3 elements
 const addOnsEl = document.getElementById('add-ons');
 const addOnCards = document.getElementsByClassName('add-on-grid');
@@ -72,6 +73,7 @@ proPlan.addEventListener('click', handlePlanClick);
 addOn1Input?.addEventListener('change', handleAddOnClick);
 addOn2Input?.addEventListener('change', handleAddOnClick);
 addOn3Input?.addEventListener('change', handleAddOnClick);
+planCardsDiv.addEventListener('click', validatePlanClick);
 
 /*----- functions -----*/
 function init() {
@@ -177,6 +179,16 @@ function handlePlanClick(evt) {
   } else {
     planEl.classList.add('add-on-checked');
     planSelected = evt.target.id;
+  }
+}
+
+function validatePlanClick(evt) {
+  if (planSelected) {
+    enableNextBtn();
+  } else {
+    if (!allNextButtons[1].classList.contains('next-btn-disabled')) {
+      disableNextBtn();
+    }
   }
 }
 
