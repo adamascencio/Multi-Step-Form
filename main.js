@@ -165,20 +165,21 @@ function handlePlanClick(evt) {
   const planId = evt.target.id;
   const planEl = document.getElementById(planId);
   planSelected = planId;
-
-  // Remove add-on-checked class from all plans
-  [arcadePlan, advancedPlan, proPlan].forEach(plan => {
-    if (plan.classList.contains('add-on-checked')) {
-      plan.classList.remove('add-on-checked');
-    }
-  });
   
+  // If user clicks on already selected plan, remove the selection
   if (planEl.classList.contains('add-on-checked')) {
     planEl.classList.remove('add-on-checked');
     planSelected = '';
+  // If user clicks on a new plan, add the selection
   } else {
     planEl.classList.add('add-on-checked');
     planSelected = evt.target.id;
+    // Remove the selection from other plans
+    for (card of planCards) {
+      if (card.id !== planId ) {
+        card.classList = 'card';
+      }
+    }
   }
 }
 
