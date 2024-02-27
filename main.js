@@ -77,9 +77,9 @@ planCardsDiv.addEventListener('click', validatePlanClick);
 
 /*----- functions -----*/
 function init() {
-  for (btn of allNextButtons) {
-    btn.classList.add('next-btn-disabled');
-    btn.disabled = true;
+  for (let i = 0; i < 2; i++) {
+    allNextButtons[i].classList.add('next-btn-disabled');
+    allNextButtons[i].disabled = true;
   }
 }
 
