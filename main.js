@@ -194,8 +194,9 @@ function validatePlanClick(evt) {
 }
 
 function handleAddOnClick(evt) {
-  const addOnSelected = evt.target.name;
-  const addOnEl = document.getElementById(addOnSelected);
+  const addOnSelected = evt.target.value;
+  const planId = `add-on-${evt.target.name[evt.target.name.length - 1]}`
+  const addOnEl = document.getElementById(planId);
 
   if (evt.target.checked) {
     addOnEl.classList.add('add-on-checked');
