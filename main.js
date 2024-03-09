@@ -140,9 +140,12 @@ function handleAddOnClick(evt) {
 
   if (evt.target.checked) {
     addOnEl.classList.add('add-on-checked');
+    addOns.push(addOnSelected);
   } else {
     addOnEl.classList.remove('add-on-checked');
+    addOns.splice(addOns.indexOf(addOnSelected), 1);
   }
+  console.log(addOns);
 }
 
 function handleBillingChange(evt) {
